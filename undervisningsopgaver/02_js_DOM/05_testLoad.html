@@ -1,38 +1,11 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <style>
-        img {
-            width: 100%;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-        }
-
-        body {
-            margin-left: 5vw;
-            margin-right: 5vw;
-        }
-
-        @media only screen and (min-width: 600px) {
-            section {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: 10px;
-            }
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="01_style.css">
 </head>
 
 <body>
@@ -41,85 +14,59 @@
     </header>
     <main>
         <h2>Undertitel</h2>
-
         <section>
-            <article>
-                <img src="billede13-kopi.jpg" alt="img">
-                <h3> Article 1</h3>
-                <p>Lorem Lorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmimpusm</p>
+            <article class="article1">
+                <img src="https://placeimg.com/640/480/any" alt="image">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit optio ipsa iusto, nesciunt eos modi adipisci reprehenderit esse perferendis expedita, placeat molestias numquam molestiae veritatis similique voluptatum. Nam, sequi minima.</p>
             </article>
-            <article>
-                <img src="billede13-kopi.jpg" alt="img">
-                <h3> Article 2</h3>
-                <p>Lorem Lorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmLorem impusmimpusm</p>
+            <article class="article2">
+                <img src="https://placeimg.com/640/480/any" alt="image">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit delectus odio iure amet repellat possimus cumque sapiente. Ut architecto reiciendis amet quaerat, quas, quos sit atque nihil a, nulla explicabo.</p>
             </article>
-
-
-
         </section>
-        <footer>This is a footer</footer>
-
     </main>
-
-
+    <footer>
+        <p>This is the footer</p>
+    </footer>
     <script>
-        const titel = document.querySelector("h1");
-        titel.textContent = "Dette er min nye titel";
-        console.log(titel);
-        const undertitel = document.querySelector("h2");
-        console.log(undertitel);
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM er loadet");
+
+            const pic1 = document.querySelector("article:first-child img");
+            console.log(pic1);
+            pic1.src = "bil1.png";
+            pic1.alt = "kode billede";
+
+            const pic2 = document.querySelector("article:nth-child(2) img");
+            console.log(pic2);
+            pic2.src = "bil2.jpg";
+            pic2.alt = "stock billede af computer";
+
+            let mainSection = document.querySelector("section");
+
+            let newArticle = document.createElement("article");
+
+            let overskrift = document.createElement("h3");
+
+            let overskriftText = document.createTextNode("Article 3");
+
+            let newP = document.createElement("p");
+            newP.textContent = "Hej Hej";
+
+            let newImg = document.createElement("img");
+            newImg.src = "bil3.jpg";
 
 
-        let article1 = document.querySelector("article:first-child")
-        console.log(article1);
-
-        let pic1 = document.querySelector("article:first-child img")
-        pic1.src = "pic.png";
-        pic1.alt = "dette er min nye alt tekst";
-        console.log(pic1);
-
-        let titel1 = document.querySelector("article:first-child h3")
-        undertitel.textContent = "Dette er min nye undertitel";
-        console.log(titel1);
-
-        let text1 = document.querySelector("article:first-child p")
-        text1.textContent = "Dette er min nye brødtekst";
-        console.log(text1);
-
-        let mainSection = document.querySelector("section")
-
-        let newArticle = document.createElement("article");
-        let overskrift = document.createElement("h3");
-        let overskriftText = document.createTextNode("Min nye artikel");
-        overskrift.appendChild(overskriftText);
-        newArticle.appendChild(overskrift);
-
-
-        let billede = document.createElement("img");
-        billede.src = "pic.png";
-        newArticle.appendChild(billede);
-
-        let text = document.createElement("p");
-        let textIndhold = document.createTextNode("her er min nye tekst");
-        text.appendChild(textIndhold);
-        newArticle.appendChild(text);
-
-
-        let article2 = document.querySelector("article:nth-child(2)")
-        console.log(article2);
-
-        let pic2 = document.querySelector("article:nth-child(2) img")
-        pic2.src = "pic.png";
-        pic2.alt = "dette er min nye alt tekst";
-        console.log(pic2);
-
-        let titel2 = document.querySelector("article:nth-child(2) h3")
-        titel2.innerHTML = "<h3> heyyy </h3>";
-        console.log(titel1);
-
-        let text2 = document.querySelector("article:nth-child(2) p")
-        text2.innerHTML = "<p> fuuuuccck hvor fedt <p>";
-        console.log(text1);
+            mainSection.appendChild(newArticle);
+            overskrift.appendChild(overskriftText);
+            newArticle.appendChild(newImg);
+            newArticle.appendChild(overskrift);
+            newArticle.appendChild(newP);
+        }
 
     </script>
 </body>
