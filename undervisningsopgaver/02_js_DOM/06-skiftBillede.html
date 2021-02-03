@@ -38,12 +38,12 @@
 
             const pic1 = document.querySelector("article:first-child img");
             console.log(pic1);
-            pic1.src = "code_image.jpg";
+            pic1.src = "code.jpg";
             pic1.alt = "kode billede";
 
             const pic2 = document.querySelector("article:nth-child(2) img");
             console.log(pic2);
-            pic2.src = "stock_billede.jpg";
+            pic2.src = "com.jpg";
             pic2.alt = "stock billede af computer";
 
             let mainSection = document.querySelector("section");
@@ -58,7 +58,7 @@
             newP.textContent = "Hej Hej";
 
             let newImg = document.createElement("img");
-            newImg.src = "code_image.jpg";
+            newImg.src = "code.jpg";
 
             mainSection.appendChild(newArticle);
             overskrift.appendChild(overskriftText);
@@ -68,6 +68,7 @@
 
             let tilfældigtTal = Math.round(Math.random() * 10);
             let element = document.querySelector("#image1");
+
             element.addEventListener("click", skiftBillede);
 
             function skiftBillede() {

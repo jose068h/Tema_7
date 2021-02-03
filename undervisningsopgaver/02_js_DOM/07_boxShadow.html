@@ -1,0 +1,302 @@
+<html lang="da">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 7</title>
+
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            padding-left: 0;
+        }
+
+        p {
+            display: flex;
+            max-width: 640px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .boxshadow {
+            box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            transition-duration: 1s;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <header>
+
+
+        <h1>Øvelse 1</h1>
+    </header>
+    <main>
+
+
+        <h2>Bylivet</h2>
+        <section>
+
+
+            <article class="boxshadow">
+
+                <img src="code.jpg" alt="billede1" id="image1">
+                <h3>London</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, quos harum tempora. Maiores deserunt laboriosam minus quisquam, temporibus consectetur nihil itaque rerum hic molestias aspernatur nam impedit similique, cumque enim!</p>
+
+            </article>
+
+
+            <article class="boxshadow">
+
+                <img src="bil1.png" alt="billede2" id="image2">
+                <h3>New York</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus fugit optio qui, commodi quibusdam provident aliquam recusandae. Veritatis quaerat ipsam nobis voluptatum expedita adipisci, saepe iusto, reiciendis odit itaque culpa.</p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer>Storbyer</footer>
+    <script>
+        const overskrifth1 = document.querySelector("h1");
+
+
+        overskrifth1.textContent = "Billedegalleri";
+
+
+        console.log(overskrifth1.textContent);
+
+
+        const underOverskrifth2 = document.querySelector("h2");
+
+
+        console.log(underOverskrifth2.textContent);
+
+
+        const article1h3 = document.querySelector("article:first-child h3");
+
+
+        article1h3.textContent = "Dette er en overskrift i Artikel 1";
+
+
+        console.log(article1h3.textContent);
+
+
+        const article2h3 = document.querySelector("article:nth-child(2) h3");
+
+
+        article2h3.textContent = "Dette er en overskrift i Artikel 2";
+
+
+        console.log(article2h3.textContent);
+
+
+        const paragraf1 = document.querySelector("article:first-child p");
+
+
+        paragraf1.innerHTML = "Dette er teksten i <b>Artikel 1</b>"
+
+
+        console.log(paragraf1.innerHTML);
+        const paragraf2 = document.querySelector("article:nth-child(2) p");
+
+
+        paragraf2.textContent = "Dette er teksten i Artikel 2"
+
+
+        console.log(paragraf2.textContent);
+        const billede1 = document.querySelector("article:first-child img");
+
+
+        billede1.textContent = "<img src=code.png";
+
+
+        console.log(billede1.textContent);
+
+
+        billede1.src = "billeder/1.jpg";
+
+
+        billede1.alt = "Nyt Billede";
+        const billede2 = document.querySelector("article:nth-child(2) img");
+
+
+        billede2.textContent = "<img src=billeder/4.jpg";
+
+
+        console.log(billede2.textContent);
+
+
+        billede2.src = "billeder/2.jpg";
+
+
+        billede2.alt = "Det nye billede";
+        const footer = document.querySelector("footer");
+
+
+        console.log(footer.textContent);
+
+
+        let mainSection = document.querySelector("section");
+        let newArticle = document.createElement("article");
+
+
+        newArticle.classList.add("boxshadow");
+        let overskrift = document.createElement("h3");
+        let overskriftText = document.createTextNode("Artikel 3");
+        let newP = document.createElement("p");
+
+
+        newP.textContent = "Hej Social Media";
+        let newImg = document.createElement("img");
+
+
+        newImg.src = "billeder/5.jpg";
+
+             // Denne tilføjer min nye Article til min mainSection
+
+             // appendChild = tilføj et nyt barn
+
+
+        mainSection.appendChild(newArticle);
+
+
+        overskrift.appendChild(overskriftText);
+
+
+        newArticle.appendChild(newImg);
+
+
+        newArticle.appendChild(overskrift);
+
+
+        newArticle.appendChild(newP);
+
+
+        let tilfældigtTal = Math.round(Math.random() * 10);
+
+
+        let element = document.querySelector("#image1");
+        element.addEventListener("click", skiftBillede);
+        function skiftBillede() {
+
+
+            image1.src = "https://placeimg.com/640/480/arch" + tilfældigtTal;
+
+
+            console.log("billede er skiftet")
+
+
+        }
+        let article2 = document.querySelector("#image2")
+
+
+        const skiftKategori = ["animals", "arch", "people", "nature", "tech"];
+        article2.addEventListener("click", skift);
+        function skift() {
+
+
+            const skiftKategori = Math.round(Math.random() * 4);
+
+
+            image2.src = "billeder/6.jpg" + skiftKategori[skiftKategori];
+
+
+            image2.alt = skiftKategori[skiftKategori];
+
+
+            console.log("skifter kategori");
+
+
+        }
+
+
+        const article = document.querySelector("article:nth-child(1)");
+
+
+        article.classList.add("boxshadow");
+        article.addEventListener("mouseover", overShadow);
+        function overShadow() {
+
+
+            console.log("se her");
+
+
+            article.classList.toggle("boxshadow");
+
+
+        }
+        const article0 = document.querySelector("article:nth-child(2)");
+
+
+        article0.classList.add("boxshadow");
+        article0.addEventListener("mouseout", outShadow);
+        function outShadow() {
+
+
+            console.log("se her");
+
+
+            article0.classList.toggle("boxshadow");
+            const article3 = document.querySelector("article:nth-child(3)");
+
+
+            article3.classList.add("boxshadow");
+        }
+
+             //
+
+             // article.addEventListener("mouseout", outShadow);
+
+             //
+
+             // function outShadow() {
+
+             // console.log("se her");
+
+             // article.classList.toggle("boxshadow");
+
+             // }
+
+    </script> </body>
+
+</html>
