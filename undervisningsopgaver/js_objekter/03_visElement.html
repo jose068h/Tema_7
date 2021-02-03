@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <article id="artikel">
+            <h3></h3>
+            <img>
+            <p>Type:</p>
+            <p>Levested:</p>
+
+        </article>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("dom er loaded");
+
+            let dyr = {
+                "navn": "gris",
+                "type": "pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarm"
+            };
+            console.log(`Dyr:${dyr.navn} Type:${dyr.type} Billede:${dyr.billede} Levested:${dyr.levested}`);
+
+            const udskrivDyr = document.querySelector("#artikel");
+            const dyrNavn = `${dyr.navn}`;
+
+
+
+            const dyrType = `Type: ${dyr.type}`;
+            const dyrLevested = `Levested: ${dyr.levested}`;
+
+            //            udskrivDyr.querySelector("h3").textContent = dyrNavn;
+            //            udskrivDyr.querySelector("img").src = dyr.billede;
+            //            udskrivDyr.querySelector("p").textContent = omDyr;
+
+
+
+
+
+            //            const altOmDyr = `Dyr:${dyr.navn} Type:${dyr.type} Billede:${dyr.billede} Levested:${dyr.levested}`
+            //            udskrivDyr.querySelector("p").textContent = altOmDyr;
+            //            udskrivDyr.querySelector("img").src = dyr.billede;
+
+
+        }
+
+    </script>
+</body>
+
+</html>
