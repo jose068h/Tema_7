@@ -12,7 +12,14 @@
     <header></header>
     <main>
 
-        <section id="liste"></section>
+        <section id="liste">
+            <template>
+                <h3></h3>
+                <img>
+                <p id="first">Type:</p>
+                <p id="second">Levested:</p>
+            </template>
+        </section>
     </main>
     <script>
         document.addEventListener("DOMContentLoaded", start);
@@ -46,11 +53,16 @@
                 "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
                 "levested": "flod"
             }];
-            console.log(dyr);
 
-            const listevising = document.querySelector("#liste");
+            const container = document.querySelector("#liste");
+            const dyrTemplate = document.querySelector("template");
             dyr.forEach(dyr => {
-                listevising.innerHTML += `<p>${dyr.navn}, ${dyr.type}. fra ${dyr.levested}</p>`
+                let klon = dyrTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = dyr.navn;
+                klon.querySelector("img").src = dyr.billede;
+                klon.querySelector("#first").textContent += dyr.type;
+                klon.querySelector("#second").textContent += dyr.levested;
+                container.appendChild(klon);
             })
 
         }
